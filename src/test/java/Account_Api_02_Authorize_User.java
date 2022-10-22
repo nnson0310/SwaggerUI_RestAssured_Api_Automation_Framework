@@ -12,6 +12,7 @@ import utils.DataFaker;
 
 public class Account_Api_02_Authorize_User {
 
+    private String userID;
     private String username;
     private String password;
 
@@ -20,7 +21,7 @@ public class Account_Api_02_Authorize_User {
         username = DataFaker.getInstance().getFullName();
         password = "Tomanyeuem@123";
 
-        PreConditions.CreateNewAccount(username, password);
+        userID = PreConditions.CreateNewAccount(username, password);
     }
 
     @Test
@@ -100,7 +101,16 @@ public class Account_Api_02_Authorize_User {
     }
 
     @Test
-    public void TC_05_Authorize_User_Not_Exist() {
+    public void TC_05_Get_User_By_UserID() {
+        RestAssured.baseURI = "https://bookstore.toolsqa.com";
+        RequestSpecification request = RestAssured.given();
+
+        Response response = request.log().all().pathParam("UUID", userID).when().get("/Account/v1/User/{UUID}");
+        System.out.println(response.getBody().asString());
+    }
+
+    @Test
+    public void TC_06_Authorize_User_Not_Exist() {
         RestAssured.baseURI = "https://bookstore.toolsqa.com";
         RequestSpecification request = RestAssured.given();
 
