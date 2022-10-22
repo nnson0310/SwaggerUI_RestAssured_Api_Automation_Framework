@@ -8,7 +8,7 @@ import responses.User;
 
 public class PreConditions {
 
-    public static void CreateNewAccount(String username, String password) {
+    public static String CreateNewAccount(String username, String password) {
         RestAssured.baseURI = "https://bookstore.toolsqa.com";
         RequestSpecification request = RestAssured.given();
 
@@ -25,5 +25,7 @@ public class PreConditions {
         Assert.assertNotNull(user.userID);
         Assert.assertEquals(user.username, username);
         Assert.assertEquals(user.books.length, 0);
+
+        return user.userID;
     }
 }
