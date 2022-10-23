@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
-import responses.User;
+import api_models.responses.User;
 
 public class PreConditions {
 

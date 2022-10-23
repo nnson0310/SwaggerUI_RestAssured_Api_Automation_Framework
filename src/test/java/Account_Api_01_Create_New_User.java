@@ -6,8 +6,8 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import responses.Common;
-import responses.User;
+import api_models.responses.Common;
+import api_models.responses.User;
 import utils.DataFaker;
 
 public class Account_Api_01_Create_New_User {
