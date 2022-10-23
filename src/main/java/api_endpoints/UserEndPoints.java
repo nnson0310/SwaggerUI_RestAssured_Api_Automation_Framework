@@ -1,6 +1,7 @@
 package api_endpoints;
 
 import api_models.requests.Authorization;
+import api_routes.UserRoutes;
 import commons.GlobalConstants;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -14,6 +15,6 @@ public class UserEndPoints {
         request.header("Content-Type", "application/json");
         request.body(authorization);
 
-        return request.post("/Account/v1/User");
+        return request.post(UserRoutes.createUserRoute());
     }
 }
