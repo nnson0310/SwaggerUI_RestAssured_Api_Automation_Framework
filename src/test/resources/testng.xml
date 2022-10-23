@@ -5,7 +5,8 @@
         <classes>
 <!--            <class name="Account_Api_01_Create_New_User"/>-->
 <!--            <class name="Account_Api_02_Authorize_User"/>-->
-            <class name="Account_Api_03_Send_Request_With_Java_POJO"/>
+<!--            <class name="Account_Api_03_Send_Request_With_Java_POJO"/>-->
+            <class name="Account_Api_04_Separate_EndPoints_From_Test_Layer"/>
         </classes>
     </test>
 </suite>
