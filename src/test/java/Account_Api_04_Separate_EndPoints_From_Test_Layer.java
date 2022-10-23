@@ -27,7 +27,7 @@ public class Account_Api_04_Separate_EndPoints_From_Test_Layer {
 
     @Test
     public void TC_01_Password_Must_Be_Correct_Format() {
-        Response response = UserEndPoints.createNewUser(new Authorization(username, invalidPassword));
+        Response response = new UserEndPoints().createNewUser(new Authorization(username, invalidPassword));
         Common commonResponse = new Gson().fromJson(response.getBody().asString(), Common.class);
 
         System.out.println(response.getBody().asString());
@@ -38,7 +38,7 @@ public class Account_Api_04_Separate_EndPoints_From_Test_Layer {
 
     @Test
     public void TC_02_Create_User_With_Valid_Credentials() {
-        Response response = UserEndPoints.createNewUser(new Authorization(username, password));
+        Response response = new UserEndPoints().createNewUser(new Authorization(username, password));
         User user = new Gson().fromJson(response.getBody().asString(), User.class);
 
         System.out.println(response.getBody().asString());
@@ -51,7 +51,7 @@ public class Account_Api_04_Separate_EndPoints_From_Test_Layer {
 
     @Test
     public void TC_03_Create_User_With_Exists_Username() {
-        Response response = UserEndPoints.createNewUser(new Authorization(username, password));
+        Response response = new UserEndPoints().createNewUser(new Authorization(username, password));
         Common commonResponse = new Gson().fromJson(response.getBody().asString(), Common.class);
 
         System.out.println(response.getBody().asString());
