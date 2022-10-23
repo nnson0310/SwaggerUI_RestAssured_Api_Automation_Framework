@@ -6,8 +6,8 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import responses.Common;
-import responses.Token;
+import api_models.responses.Common;
+import api_models.responses.Token;
 import utils.DataFaker;
 
 public class Account_Api_02_Authorize_User {

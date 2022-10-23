@@ -1,6 +1,4 @@
-package responses;
-
-import io.restassured.response.Response;
+package api_models.responses;
 
 public class User {
     public String userID;

@@ -1,4 +1,4 @@
-package responses;
+package api_models.responses;
 
 public class Token {
 
